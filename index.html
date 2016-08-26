@@ -3,6 +3,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <title>Service Workers Nightly</title>
+  <link href="https://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
  *
@@ -457,7 +458,7 @@
 		font-style: normal;
 	}
 	dt dfn code, code.idl {
-		font-size: medium;
+		font-size: normal;
 	}
 	dfn var {
 		font-style: normal;
@@ -1404,16 +1405,15 @@ pre.idl.highlight { color: #708090; }
         .highlight .vi { color: #0077aa } /* Name.Variable.Instance */
         .highlight .il { color: #000000 } /* Literal.Number.Integer.Long */
         </style>
-  <link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD"/>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"><a href="https://www.w3.org/"><img height="48" width="72" alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"/></a></p>
+   <p data-fill-with="logo"><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Service Workers Nightly</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">W3C Working Draft, <time class="dt-updated" datetime="2016-08-26">26 August 2016</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://www.w3.org/TR/2016/WD-service-workers-20160830/">https://www.w3.org/TR/2016/WD-service-workers-20160830/</a>
+     <dd><a class="u-url" href="https://www.w3.org/TR/2016/WD-service-workers-20160826/">https://www.w3.org/TR/2016/WD-service-workers-20160826/</a>
      <dt>Latest published version:
      <dd><a href="https://www.w3.org/TR/service-workers/">https://www.w3.org/TR/service-workers/</a>
      <dt>Editor's Draft:
@@ -4248,7 +4248,9 @@ interface FunctionalEvent : ExtendableEvent {
            <li>Invoke <a href="#reject-job-promise-algorithm">Reject Job Promise</a> with <var>job</var> and a "<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#securityerror">SecurityError</a></code>" exception.
            <li>Asynchronously complete these steps with a <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-network-error">network error</a>.
           </ol>
-         <li>If <var>response</var>’s <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#concept-response-cache-state">cache state</a> is not "<code>local</code>", set <var>registration</var>’s <a href="#dfn-last-update-check-time" id="ref-for-dfn-last-update-check-time-3">last update check time</a> to the current time.
+         <li>
+          If <var>response</var>’s <a href="https://github.com/whatwg/fetch/issues/376">cache state</a> is not "<code>local</code>", set <var>registration</var>’s <a href="#dfn-last-update-check-time" id="ref-for-dfn-last-update-check-time-3">last update check time</a> to the current time. 
+          <p class="issue" id="issue-3c7457a0"><a class="self-link" href="#issue-3c7457a0"></a>The response’s cache state concept had been removed from fetch. The fetch issue <a href="https://github.com/whatwg/fetch/issues/376">#376</a> tracks the request to restore the concept or add some similar way to check this state.</p>
          <li>Return true.
         </ol>
         <p>If the algorithm asynchronously completes with null, then: </p>
@@ -5800,7 +5802,6 @@ interface FunctionalEvent : ExtendableEvent {
      <li><a href="https://fetch.spec.whatwg.org/#concept-filtered-response-basic">basic filtered response</a>
      <li><a href="https://fetch.spec.whatwg.org/#concept-response-body">body</a>
      <li><a href="https://fetch.spec.whatwg.org/#concept-request-cache-mode">cache mode</a>
-     <li><a href="https://fetch.spec.whatwg.org/#concept-response-cache-state">cache state</a>
      <li><a href="https://fetch.spec.whatwg.org/#concept-cancel-readablestream">cancel a readablestream</a>
      <li><a href="https://fetch.spec.whatwg.org/#concept-request-client">client</a>
      <li><a href="https://fetch.spec.whatwg.org/#concept-close-readablestream">close readablestream</a>
@@ -6063,7 +6064,7 @@ interface FunctionalEvent : ExtendableEvent {
    <dt id="biblio-notifications">[NOTIFICATIONS]
    <dd>Anne van Kesteren. <a href="https://notifications.spec.whatwg.org/">Notifications API Standard</a>. Living Standard. URL: <a href="https://notifications.spec.whatwg.org/">https://notifications.spec.whatwg.org/</a>
    <dt id="biblio-unsanctioned-tracking">[UNSANCTIONED-TRACKING]
-   <dd><a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking">Unsanctioned Web Tracking</a>. 17 July 2015. Finding of the W3C TAG. URL: <a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking">https://www.w3.org/2001/tag/doc/unsanctioned-tracking</a>
+   <dd><a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/">Unsanctioned Web Tracking</a>. 17 July 2015. Finding of the W3C TAG. URL: <a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/">https://www.w3.org/2001/tag/doc/unsanctioned-tracking/</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
 <pre class="idl def">[<a class="nv idl-code" data-link-type="extended-attribute">SecureContext</a>, <a class="nv idl-code" data-link-type="extended-attribute">Exposed</a>=(<span class="n">Window</span>,<span class="n">Worker</span>)]
@@ -6326,6 +6327,7 @@ interface FunctionalEvent : ExtendableEvent {
 </pre>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
+   <div class="issue">The response’s cache state concept had been removed from fetch. The fetch issue <a href="https://github.com/whatwg/fetch/issues/376">#376</a> tracks the request to restore the concept or add some similar way to check this state.<a href="#issue-3c7457a0"> ↵ </a></div>
    <div class="issue">Remove this definition after sorting out the referencing sites.<a href="#issue-b739bfcf"> ↵ </a></div>
   </div>
   <aside class="dfn-panel" data-for="dfn-service-worker">

@@ -35,7 +35,7 @@ Markup Shorthands: css no
     "publisher": "W3C TAG"
   },
   "unsanctioned-tracking": {
-    "href": "https://www.w3.org/2001/tag/doc/unsanctioned-tracking",
+    "href": "https://www.w3.org/2001/tag/doc/unsanctioned-tracking/",
     "title": "Unsanctioned Web Tracking",
     "date": "17 July 2015",
     "status": "Finding of the W3C TAG",
@@ -3302,7 +3302,9 @@ spec: webidl; urlPrefix: https://heycam.github.io/webidl/
               <li>Asynchronously complete these steps with a <a>network error</a>.</li>
             </ol>
           </li>
-          <li>If <var>response</var>'s <a for="response">cache state</a> is not "<code>local</code>", set <var>registration</var>'s <a href="#dfn-last-update-check-time">last update check time</a> to the current time.</li>
+          <li>If <var>response</var>'s <a for="response" href="https://github.com/whatwg/fetch/issues/376">cache state</a> is not "<code>local</code>", set <var>registration</var>'s <a href="#dfn-last-update-check-time">last update check time</a> to the current time.
+            <p class="issue">The response's cache state concept had been removed from fetch. The fetch issue <a href="https://github.com/whatwg/fetch/issues/376">#376</a> tracks the request to restore the concept or add some similar way to check this state.</p>
+          </li>
           <li>Return true.</li>
         </ol>
         <p>If the algorithm asynchronously completes with null, then:
